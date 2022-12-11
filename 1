@@ -1,0 +1,56 @@
+#include "BinSearchTree.h"
+
+int main()
+
+{
+
+    Book* book = 0;
+
+    BST* bst = New_BST();
+
+    BST_Insert(bst, New_Book("C언어", "홍길동", 10));
+
+    BST_Insert(bst, New_Book("C++", "홍길동", 8));
+
+    BST_Insert(bst, New_Book("자료구조", "홍길동", 7));
+
+    BST_Insert(bst, New_Book("알고리즘", "홍길동", 12));
+
+    BST_Insert(bst, New_Book("디자인패턴", "홍길동", 5));
+
+    BST_Insert(bst, New_Book("소켓통신", "홍길동", 4));
+
+    BST_List(bst);
+
+    book = BST_Find(bst, 5);
+
+    if (book)
+
+    {
+
+        printf("검색 성공\n");
+
+        Book_View(book);
+
+    }
+
+    else
+
+    {
+
+        printf("검색 실패\n");
+
+    }
+
+    BST_Remove(bst, 5);
+
+    BST_List(bst);
+
+    Delete_BST(bst);
+
+    return 0;
+
+}
+
+
+
